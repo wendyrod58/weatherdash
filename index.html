@@ -25,16 +25,6 @@
     </header>
 
 
-    <!-- search by city section -->
-    <!-- <div class="card">
-        <h5 class="card-header text-uppercase">Search By City</h5>
-        <form id="user-form" class="card-body">
-            <label class="form-label" for="city">City</label>
-            <input name="city" id="city" type="text" autofocus="true" class="form-input" />
-            <button type="submit" class="btn">Get Weather</button>
-        </form>
-    </div> -->
-
     <div>
         <h5>Search by City</h5>
         <textarea placeholder="Enter City" aria-label="Submit" id="search-text"></textarea>
@@ -46,8 +36,6 @@
             <li class="list-group-item">City 1</li>
             <li class="list-group-item">City 2</li>
             <li class="list-group-item">City 3</li>
-            <li class="list-group-item">City 4</li>
-            <li class="list-group-item">City 5</li>
         </ul>
     </div>
 
@@ -57,12 +45,18 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Current Weather</h5>
-                <p class="card-text">
-                    <li id="current-temp">Temperature: </li>
-                    <li>Humidity: </li>
-                    <li>WindSpeed : </li>
-                    <li>UVI index : </li>
-                </p>
+<h6>Temperature</h6>
+                <p class="card-text" id="current-temp"> </p>
+
+                <h6>Humidity</h6>
+                <p class="card-text" id="current-hum"></p>
+
+                <h6>Wind Speed</h6>
+                <p class="card-text" id="current-wind"></p>
+
+                <h6>UV Index</h6>
+                <p class="card-text" id="current-uvi"></p>
+
             </div>
             <div class="card-footer">
                 <small class="text-muted">Last updated 3 mins ago</small>
