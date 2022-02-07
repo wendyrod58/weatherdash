@@ -37,26 +37,49 @@
 
     <div>
         <h5>Search by City</h5>
-        <textarea placeholder="Enter City" aria-label="Submit"></textarea>
-        <button>Get Weather</button>
+        <textarea placeholder="Enter City" aria-label="Submit" id="search-text"></textarea>
+        <button id="getWeather">Get Weather</button>
     </div>
 
     <div>
-    <ul class="list-group">
-        <li class="list-group-item">City 1</li>
-        <li class="list-group-item">City 2</li>
-        <li class="list-group-item">City 3</li>
-        <li class="list-group-item">City 4</li>
-        <li class="list-group-item">City 5</li>
-      </ul>
+        <ul class="list-group">
+            <li class="list-group-item">City 1</li>
+            <li class="list-group-item">City 2</li>
+            <li class="list-group-item">City 3</li>
+            <li class="list-group-item">City 4</li>
+            <li class="list-group-item">City 5</li>
+        </ul>
     </div>
+
+    <!-- card for current weather-->
+    <div class="card-group">
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Current Weather</h5>
+                <p class="card-text">
+                    <li id="current-temp">Temperature: </li>
+                    <li>Humidity: </li>
+                    <li>WindSpeed : </li>
+                    <li>UVI index : </li>
+                </p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+            </div>
+        </div>
+
+    </div>
+
+
+
 
 
     <div>
         <h5> 5-Day Forecast </h5>
     </div>
 
-    <!-- cards -->
+    <!-- cards for 5 day weather-->
     <div class="card-group">
 
 
