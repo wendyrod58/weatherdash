@@ -3,6 +3,8 @@ var searchTextEl = document.getElementById("search-text");
 var searchBtn = document.getElementById("getWeather");
 var searchHistory = []
 
+
+
 //function get the Weather
 function getWeatherAPI() {
     var geoCodingURL = 'http://api.openweathermap.org/geo/1.0/direct?q=' + searchTextEl.value + '&limit=1&appid=' + apiKey;
@@ -27,6 +29,8 @@ function getWeatherAPI() {
             var currentURL = "http://api.openweathermap.org/data/2.5/onecall?lat=" + lati + "&lon=" + long + "&exclude=hourly,minutely,alerts&units=imperial&appid=" + apiKey;
             console.log(currentURL);
 
+            // var dayName = Date(value.dt * 1000).toLocaleDateString("en", {weekday: "long",});
+
             //fetch Request for current weather api 
             fetch(currentURL)
                 .then(function (response1) {
@@ -35,13 +39,12 @@ function getWeatherAPI() {
                 .then(function (data1) {
                     console.log("current weather response", data1);
                     //display on HTMl PAGE 
+                    document.getElementById("current-date").textContent = data1.current.dt;
                     document.getElementById("current-temp").textContent = data1.current.temp;
                     document.getElementById("current-hum").textContent = data1.current.humidity;
                     document.getElementById("current-wind").textContent = data1.current.wind_speed;
                     document.getElementById("current-uvi").textContent = data1.current.uvi;
                 })
-
-
 
 
             //5-Day Forecast 
@@ -56,6 +59,7 @@ function getWeatherAPI() {
                 .then(function (data1) {
                     console.log("daily weather response", data1);
                     // display in HTML page
+                    document.getElementById("day1-date").textContent = data1.daily[0].dt;
                     document.getElementById("day1-temp").textContent = data1.daily[0].temp.day;
                     document.getElementById("day1-hum").textContent = data1.daily[0].humidity;
                     document.getElementById("day1-wind").textContent = data1.daily[0].wind_speed;
