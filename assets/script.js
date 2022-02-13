@@ -56,7 +56,30 @@ function getWeatherAPI() {
                 .then(function (data1) {
                     console.log("daily weather response", data1);
                     // display in HTML page
-                    document.getElementById("day1-temp").textContent = data1.daily[0].temp;
+                    document.getElementById("day1-temp").textContent = data1.daily[0].temp.day;
+                    document.getElementById("day1-hum").textContent = data1.daily[0].humidity;
+                    document.getElementById("day1-wind").textContent = data1.daily[0].wind_speed;
+                    document.getElementById("day1-uvi").textContent = data1.daily[0].uvi;
+                    
+                    document.getElementById("day2-temp").textContent = data1.daily[1].temp.day;
+                    document.getElementById("day2-hum").textContent = data1.daily[1].humidity;
+                    document.getElementById("day2-wind").textContent = data1.daily[1].wind_speed;
+                    document.getElementById("day2-uvi").textContent = data1.daily[1].uvi;
+                    
+                    document.getElementById("day3-temp").textContent = data1.daily[2].temp.day;
+                    document.getElementById("day3-hum").textContent = data1.daily[2].humidity;
+                    document.getElementById("day3-wind").textContent = data1.daily[2].wind_speed;
+                    document.getElementById("day3-uvi").textContent = data1.daily[2].uvi;
+                    
+                    document.getElementById("day4-temp").textContent = data1.daily[3].temp.day;
+                    document.getElementById("day4-hum").textContent = data1.daily[3].humidity;
+                    document.getElementById("day4-wind").textContent = data1.daily[3].wind_speed;
+                    document.getElementById("day4-uvi").textContent = data1.daily[3].uvi;
+                    
+                    document.getElementById("day5-temp").textContent = data1.daily[4].temp.day;
+                    document.getElementById("day5-hum").textContent = data1.daily[4].humidity;
+                    document.getElementById("day5-wind").textContent = data1.daily[4].wind_speed;
+                    document.getElementById("day5-uvi").textContent = data1.daily[4].uvi;
                 })
         })
 
