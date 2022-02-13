@@ -20,9 +20,9 @@ function getWeatherAPI() {
             var long = data[0].lon;
             var lati = data[0].lat;
 
+            // to show name of city
             console.log(data[0].name)
-            // document.getElementById("city").textContent = data[0].name
-            // console.log(data[0].name)
+            document.getElementById("city").textContent = data[0].name
 
             var currentURL = "http://api.openweathermap.org/data/2.5/onecall?lat=" + lati + "&lon=" + long + "&exclude=hourly,minutely,alerts&units=imperial&appid=" + apiKey;
             console.log(currentURL);
@@ -44,21 +44,19 @@ function getWeatherAPI() {
 
 
 
-                //fetch Request for daily weather api 
-                var forecastURL = "http://api.openweathermap.org/data/2.5/onecall?lat=" + lati + "&lon=" + long + "&exclude=hourly,minutely,alerts&units=imperial&appid=" + apiKey;
-                console.log(currentURL);
-            
+            //5-Day Forecast 
+            var forecastURL = "http://api.openweathermap.org/data/2.5/onecall?lat=" + lati + "&lon=" + long + "&exclude=hourly,minutely,alerts&units=imperial&appid=" + apiKey;
+            console.log(forecastURL);
+
+            //fetch Request for daily weather api 
             fetch(forecastURL)
-                .then(function (response2) {
-                    return response2.json();
+                .then(function (response1) {
+                    return response1.json();
                 })
-                .then(function (data2) {
-                    console.log("daily weather response", data2);
-                    //display on HTMl PAGE 
-                    document.getElementById("day1-temp").textContent = data2.daily.temp;
-                    document.getElementById("day1-hum").textContent = data2.daily.humidity;
-                    document.getElementById("day1-wind").textContent = data2.daily.wind_speed;
-                    document.getElementById("day1-uvi").textContent = data2.daily.uvi;
+                .then(function (data1) {
+                    console.log("daily weather response", data1);
+                    // display in HTML page
+                    document.getElementById("day1-temp").textContent = data1.daily[0].temp;
                 })
         })
 
