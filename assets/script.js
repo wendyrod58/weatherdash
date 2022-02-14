@@ -61,7 +61,7 @@ function getWeatherAPI() {
                     document.getElementById("day1-temp").textContent = data1.daily[1].temp.day;
                     document.getElementById("day1-hum").textContent = data1.daily[1].humidity;
                     document.getElementById("day1-wind").textContent = data1.daily[1].wind_speed;
-                    document.getElementById("day1-uvi").textContent = data1.daily[1].uvi;
+                    
 
 
                     var date2 = new Date(data1.daily[2].dt * 1000).toLocaleDateString("en-US");
@@ -69,32 +69,31 @@ function getWeatherAPI() {
                     document.getElementById("day2-temp").textContent = data1.daily[2].temp.day;
                     document.getElementById("day2-hum").textContent = data1.daily[2].humidity;
                     document.getElementById("day2-wind").textContent = data1.daily[2].wind_speed;
-                    document.getElementById("day2-uvi").textContent = data1.daily[2].uvi;
+                    
 
                     var date3 = new Date(data1.daily[3].dt * 1000).toLocaleDateString("en-US");
                     document.getElementById("day3-date").textContent = date3;                    
                     document.getElementById("day3-temp").textContent = data1.daily[3].temp.day;
                     document.getElementById("day3-hum").textContent = data1.daily[3].humidity;
                     document.getElementById("day3-wind").textContent = data1.daily[3].wind_speed;
-                    document.getElementById("day3-uvi").textContent = data1.daily[3].uvi;
+                    
 
                     var date4 = new Date(data1.daily[4].dt * 1000).toLocaleDateString("en-US");
                     document.getElementById("day4-date").textContent = date4;             
                     document.getElementById("day4-temp").textContent = data1.daily[4].temp.day;
                     document.getElementById("day4-hum").textContent = data1.daily[4].humidity;
                     document.getElementById("day4-wind").textContent = data1.daily[4].wind_speed;
-                    document.getElementById("day4-uvi").textContent = data1.daily[4].uvi;
-
+                    
                     var date5 = new Date(data1.daily[5].dt * 1000).toLocaleDateString("en-US");
                     document.getElementById("day5-date").textContent = date5;             
                     document.getElementById("day5-temp").textContent = data1.daily[5].temp.day;
                     document.getElementById("day5-hum").textContent = data1.daily[5].humidity;
                     document.getElementById("day5-wind").textContent = data1.daily[5].wind_speed;
-                    document.getElementById("day5-uvi").textContent = data1.daily[5].uvi;
+                 
 
                     //append value to the array 
                     searchHistory.push(data[0].name);
-                    //save the city in localstoage 
+                    //save the city in localstorage 
                     localStorage.setItem("cityList", JSON.stringify(searchHistory));
                     //calling the function 
                     searchedCities();
@@ -103,17 +102,14 @@ function getWeatherAPI() {
 
 }
 
-// Search History 
-// function 
-// loop
-// create an array
 
+// Search History
 function searchedCities() {
     document.getElementById("searched-cities").innerHTML = ""; //empty the previous values 
 
     for (var index = 0; index < searchHistory.length; index++) {
         console.log("city name", searchHistory[index]);
-        //create an li tag eleemnt 
+        //create an li tag element 
         var liTag = document.createElement("li"); 
         //set the display text of city name 
         liTag.textContent = searchHistory[index]; 
