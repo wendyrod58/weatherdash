@@ -26,7 +26,7 @@ function getWeatherAPI() {
             console.log(data[0].name)
             document.getElementById("city").textContent = data[0].name
 
-            var currentURL = "http://api.openweathermap.org/data/2.5/onecall?lat=" + lati + "&lon=" + long + "&exclude=hourly,minutely,alerts&units=imperial&appid=" + apiKey;
+            var currentURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lati + "&lon=" + long + "&exclude=hourly,minutely,alerts&units=imperial&appid=" + apiKey;
             console.log(currentURL);
 
             // var dayName = Date(value.dt * 1000).toLocaleDateString("en", {weekday: "long",});
@@ -48,7 +48,7 @@ function getWeatherAPI() {
 
 
             //5-Day Forecast 
-            var forecastURL = "http://api.openweathermap.org/data/2.5/onecall?lat=" + lati + "&lon=" + long + "&exclude=hourly,minutely,alerts&units=imperial&appid=" + apiKey;
+            var forecastURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lati + "&lon=" + long + "&exclude=hourly,minutely,alerts&units=imperial&appid=" + apiKey;
             console.log(forecastURL);
 
             //fetch Request for daily weather api 
