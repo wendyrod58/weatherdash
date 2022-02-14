@@ -8,7 +8,7 @@ var searchHistory = []
 //function get the Weather
 function getWeatherAPI() {
     var geoCodingURL = 'https://api.openweathermap.org/geo/1.0/direct?q=' + searchTextEl.value + '&limit=1&appid=' + apiKey;
-    console.log(geoCodingURL);
+    console.log("location URL", geoCodingURL);
 
     //Fetch the Lat and Lon based on the user input 
     fetch(geoCodingURL)
